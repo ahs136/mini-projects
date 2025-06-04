@@ -1,0 +1,92 @@
+/* Reset default margin and padding */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    background-color: #2ba1f0;
+    width: 100%;
+    padding: 5px; /* Reduced from 10px */
+    border-bottom: 2px solid #000;
+    margin-bottom: 15px; /* Reduced from 50px */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height:80vh;
+    background-color: #ffffff; /* White background for the container */
+    padding: 20px; /* Add padding inside the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 20px;
+}
+
+.container form {
+    width: 390px; /* Set explicit width for the form */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.container form input {
+    width: 300px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.container form button {
+    padding: 10px 20px;
+}
+
+.container .todo-list {
+    padding: 0; /* Remove default padding from ul */
+    margin: 0; /* Remove default margin from ul */
+    width: 390px; /* Match the form width */
+}
+
+.container .todo-list li {
+    width: 100%; /* Take full width of the ul container */
+    background-color: #ffffff; /* Pure white background */
+    list-style-type: none;
+    padding: 10px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    position: relative; /* For absolute positioning of delete button */
+}
+
+.search-container {
+    width: 390px; /* Match the width of the todo container */
+    margin: 10px 50px 10px auto; /* Equal compact spacing top and bottom */
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+}
+
+.search-container input {
+    width: 100%;
+    padding: 8px; /* Slightly reduced padding */
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.delete-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ff0000;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.delete-btn:hover {
+    color: darkred;
+}

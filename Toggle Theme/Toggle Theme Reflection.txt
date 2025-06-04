@@ -1,0 +1,10 @@
+﻿After 2 weeks of beginning MVP development and refreshing on HTML and CSS, I decided to start working on a couple mini-projects to assess my learning. The most recent topics I learned were JavaScript arrow keys, DOM manipulation, object notation, and local storage, however I chose to start with a very simple project to also make sure that I was comfortable with applying styles.
+
+
+The process of creating an HTML file with a button (for toggling the theme), sample text, and corresponding classes and containers was quite simple. I was also able to use my knowledge of flexbox to center my text. I did struggle a bit with adding styling to my containers as I accidentally nested my sample text inside of the container for my button, meaning that its styling was overridden. Thankfully, a simple google search resolved my issue. 
+
+
+After writing styling for the body and button I created a second version of both with a ‘.dark’ extension.  After that I was ready to add the JavaScript functionality. Toggling the theme only required one simple function. First, I used a getElementById to retrieve the toggle-theme button. I then set up an EventListener for a ‘click’ and used an arrow function to toggle the class of dark inside of the body element. I had learned about simple built-in functions such as toggle through YouTube tutorials on JavaScript and DOM.
+
+
+Overall, this was a simple first project to refresh on all of the topics I had learned involving web design.
