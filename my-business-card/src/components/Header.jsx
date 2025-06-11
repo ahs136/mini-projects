@@ -11,7 +11,7 @@ function Header() {
                 <a href="mailto:ahs136@pitt.edu" className="email-button">
                     <i className="fas fa-envelope"></i> Email
                 </a>
-                <a href="https://www.linkedin.com/in/ali-siddiqui-b4b0b7227/" className="linkedin-button" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/ali-siddiqui-601ab0325/" className="linkedin-button" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-linkedin"></i> LinkedIn
                 </a>
             </div>

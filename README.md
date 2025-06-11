@@ -31,3 +31,5 @@ To ensure a better user experience, I also implemented duplicate detection logic
 
 
 This project deepened my understanding of JavaScript fundamentals like event handling, DOM manipulation, API requests, and dynamic UI updates.
+
+##
