@@ -16,6 +16,7 @@ This project took me 2-3 hours and expanded upon what I learned in my toggle the
 
 
 Additionally, I developed a search filter that updates the visible list items as the user types. From a previous JavaScript tutorial, I knew the importance of converting strings to lower/uppercase before comparing them. I experimented with different string matching methods, initially using .includes() but then refining it to .startsWith() to precisely match the strings rather than simply looking for included characters. I also learned the importance of retrieving the modified list of items within the event listener callback to accommodate dynamic changes, such as adding or deleting todos. Overall, this process deepened my understanding of how to manipulate the DOM efficiently, handle events dynamically, and create responsive, user-friendly interfaces.
+
 ## Weather App
 To build this weather app, I started by setting up a clean and minimal HTML structure with semantic elements and unique IDs for easy JavaScript targeting. The goal was to focus primarily on practicing JavaScript concepts, so I used AI to quickly generate a functional CSS stylesheet. This let me save time on styling and prioritize learning dynamic DOM manipulation and API handling.
 
