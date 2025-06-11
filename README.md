@@ -32,4 +32,11 @@ To ensure a better user experience, I also implemented duplicate detection logic
 
 This project deepened my understanding of JavaScript fundamentals like event handling, DOM manipulation, API requests, and dynamic UI updates.
 
-##
+## Business Card
+This project was created with Vite to create my first static webpage in React. This project was quite simple and can be ran by installing the dependencies and using npm run dev. I cemented a lot of what I had learned about css and the idea of creating seperate components made a lot of sense. I would export each component, import it into the app.jsx, and then use my main file to create an element in the root of my html file. 
+
+## Travel Journal
+React and learned how to pass data effectively using props. I practiced mapping over arrays to dynamically render UI elements, and I became more comfortable structuring projects with separate component and data files. Setting up the project from scratch also gave me valuable experience using create-react-app, managing dependencies, and organizing files between the src and public folders. Overall, this project helped solidify key concepts in React like props, component reuse, and JSX structure.
+
+One of the most challenging parts was working through Git and GitHub, especially when moving the project manually and running into issues with tracking changes and pushing updates. I also faced technical issues with dependencies, like getting react-scripts to work properly after moving files. Debugging path-related problems for image rendering and learning how public assets are accessed in React also tested my attention to detail. Despite these challenges, resolving them gave me more confidence working with both React and version control tools.
+
