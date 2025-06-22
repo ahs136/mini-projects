@@ -6,7 +6,6 @@ import Confetti from "react-confetti";
 
 
 function App() {
-  
   // Initialize States
   const [dice, setDice] = React.useState(allNewDice());
   const [tenzies, setTenzies] = React.useState(false);
@@ -105,7 +104,9 @@ function App() {
       </div>
       <div className="button-wrapper">
         <p className="roll-count">Rolls: {count}</p>
-        <button className="roll-button" onClick={handleRoll}>{tenzies ? "New Game" : "Roll dice"}</button>
+<button className="roll-button" onClick={handleRoll}>
+  {tenzies ? "New Game" : count === 0 ? "Start Game" : "Roll Dice"}
+</button>
         <p className="timer">Time: {elapsedTime ? elapsedTime.toFixed(3) : "0.000"}s</p>
       </div>
     </main>
