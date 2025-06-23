@@ -9,10 +9,16 @@ function App() {
   // Initialize States
   const [dice, setDice] = React.useState(allNewDice());
   const [tenzies, setTenzies] = React.useState(false);
+  
   const [count, setCount] = React.useState(0);
   const [isTiming, setIsTiming] = React.useState(false);
   const [elapsedTime, setElapsedTime] = React.useState(0);
   const [startTime, setStartTime] = React.useState(null);
+
+  const [playerName, setPlayerName] = React.useState("");
+  const [submittedName, setSubmittedName] = React.useState("");
+  const [bestScores, setBestScores] = React.useState([]);
+
 
 
   // function to create a new array of dice for every roll
@@ -56,26 +62,55 @@ function App() {
     }
     // function for holding a dice
     function handleHold(id) {
+      if (count !== 0) {
       setDice(prevDice => prevDice.map(die => {
         return (die.id === id ? {...die, isHeld: !die.isHeld} : die)
       }))
     }
+  }
 
   // useEffect to check if all dice are held and have the same value
+  // Also includes saving best scores to localStorage
     React.useEffect(() => {
-      const allHeld = dice.every(die => die.isHeld) // for every dice if isHeld is true this whole line is true
-      const winningValue = dice[0].value
-      const allSame = dice.every(die => die.value === winningValue)
+      const allHeld = dice.every(die => die.isHeld);
+      const winningValue = dice[0].value;
+      const allSame = dice.every(die => die.value === winningValue);
 
-      // if all dice are held and have the same value, set the game to won
-      if (allHeld && allSame){
-        setTenzies(true)
-        setIsTiming(false); 
+      if (allHeld && allSame) {
+        setTenzies(true);
+        setIsTiming(false);
+
+        const newScore = {
+          name: submittedName || "Anonymous",
+          time: elapsedTime,
+          rolls: count
+        };
+
+        // Get existing scores from localStorage
+        const savedScores = JSON.parse(localStorage.getItem("tenzies-scores")) || [];
+
+        // Add new score and keep top 3 fastest
+        const updatedScores = [...savedScores, newScore]
+          .sort((a, b) => a.time - b.time)
+          .slice(0, 3);
+
+        // Save updated scores to localStorage
+        localStorage.setItem("tenzies-scores", JSON.stringify(updatedScores));
+        setBestScores(updatedScores);
       }
-    },[dice] )
+    }, [dice]);
+
+
+  // useEffect to load best scores from localStorage on initial render
+  React.useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("tenzies-scores")) || [];
+    setBestScores(saved);
+  }, []);
+
 
   // map through newDice array (which is state of dice) and create 10 Die elements from die.js structure
   const diceElements = dice.map(die => <Die key={die.id} value={die.value} isHeld={die.isHeld} handleHold={() => handleHold(die.id)} />)
+
 
   // useEffect to handle the timer
   React.useEffect(() => {
@@ -91,6 +126,9 @@ function App() {
     return () => clearInterval(interval);
   }, [isTiming, startTime]);
 
+
+
+  // JSX
   return (
     <main>
       {tenzies && <Confetti />}
@@ -99,16 +137,45 @@ function App() {
         Roll the dice until all dice are the same. Click each die to freeze it at its current value between rolls.
       </p>
 
+      <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            setSubmittedName(playerName);
+          }}
+          className="name-form"
+        >
+        <input
+          type="text"
+          placeholder="Enter player name"
+          value={playerName}
+          onChange={(e) => setPlayerName(e.target.value)}
+        />
+        <button>Set Name</button>
+      </form>
+
       <div className="dice-container">
         {diceElements}
       </div>
       <div className="button-wrapper">
         <p className="roll-count">Rolls: {count}</p>
-<button className="roll-button" onClick={handleRoll}>
-  {tenzies ? "New Game" : count === 0 ? "Start Game" : "Roll Dice"}
-</button>
+        <button className="roll-button" onClick={handleRoll}>
+          {tenzies ? "New Game" : count === 0 ? "Start Game" : "Roll Dice"}
+        </button>
         <p className="timer">Time: {elapsedTime ? elapsedTime.toFixed(3) : "0.000"}s</p>
       </div>
+      {bestScores.length > 0 && (
+      <div className="best-scores">
+        <h3>🏆 Leaderboard</h3>
+        <ul>
+          {bestScores.map((score, index) => (
+            <li key={index}>
+              {score.name} — {score.time.toFixed(3)}s — {score.rolls} rolls
+            </li>
+          ))}
+        </ul>
+      </div>
+      )}
+
     </main>
   );
 }
