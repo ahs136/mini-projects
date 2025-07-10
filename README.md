@@ -1,5 +1,6 @@
 # mini-projects
 Repository for mini projects to track my front end learning while developing the WorkFlow MVP 
+
 Most recent at the top
 ## Tenzies Game
 Building the Tenzies game was a milestone in my React learning journey. I began with a video tutorial that walked me through the structure of the app. The tutorial gave me a clear framework and served as a helpful guide when I needed to check my logic or compare solutions. From the full beginner React tutorial that I did, I was well versed in managing state with useState rendering components conditionally with ternaries or if statements, mapping to create new arrays, and passing state and props from parent to child components.  
