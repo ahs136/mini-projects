@@ -10,6 +10,9 @@ Once the base game was working, I added several custom features on my own, inclu
 I also debugged some functional quirks and improved the user experience, such as updating the button text dynamically from "Start Game" to "Roll Dice" to "New Game" based on the game state and not allowing the boxes to be clicked between games. This sharpened my logic and deepened my appreciation for how React makes UI updates intuitive through declarative code.
 
 Overall, the project was both a great learning experience and a confidence boost. It brought together everything I’ve learned about component desing and updating state, proving that I can now build polished, interactive web apps with React.
+
+<img width="900" height="750" alt="Screenshot 2025-07-10 131208" src="https://github.com/user-attachments/assets/a6dfaba5-062b-466b-8b89-fd75e0c22540" />
+
 ## Travel Journal
 This project touched on all the topics I learned for creating static webpages with React, namely passing data effectively using props. I practiced mapping over arrays to dynamically render UI elements, and I became more comfortable structuring projects with separate component and data files. Setting up the project from scratch also gave me valuable experience using create-react-app, managing dependencies, and organizing files between the src and public folders. Overall, this project helped solidify key concepts in React like props, component reuse, and JSX structure.
 
